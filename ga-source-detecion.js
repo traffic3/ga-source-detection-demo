@@ -36,6 +36,9 @@ function getSourceData(options = {}) {
     if (googleClickId) {
         sourceData.source = 'google';
         sourceData.medium = 'cpc';
+        sourceData.campaign = urlParams.get('utm_campaign');
+        sourceData.content = urlParams.get('utm_content');
+        sourceData.term = urlParams.get('utm_term');
         return sourceData;
     }
 
@@ -43,7 +46,7 @@ function getSourceData(options = {}) {
     // utm_source is mandatory, other parameters are optional
     if(urlParams.has('utm_source')) {
         sourceData.source = urlParams.get('utm_source');
-        sourceData.medium = urlParams.get('utm_medium') || 'organic';
+        sourceData.medium = urlParams.get('utm_medium');
         sourceData.campaign = urlParams.get('utm_campaign');
         sourceData.content = urlParams.get('utm_content');
         sourceData.term = urlParams.get('utm_term');
