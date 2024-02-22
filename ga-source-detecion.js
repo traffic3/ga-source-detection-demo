@@ -1,7 +1,7 @@
 /**
  * This function detects the source of the current traffic, using the same logic as Google Analytics.
  * @param options {referrerExclusion: []}
- * @returns {{campaign: null, term: null, source: null, medium: null, content: null}}
+ * @returns {{campaign: null|string, term: null|string, source: null|string, medium: null|string, content: null|string}}
  */
 function getSourceData(options = {}) {
     const sourceData = {
